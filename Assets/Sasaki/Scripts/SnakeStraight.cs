@@ -2,34 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// u.sasaki
+/// </summary>
 public class SnakeStraight : MonoBehaviour
 {
-    private GameObject player;
-    [SerializeField]
+    [SerializeField, Header("蛇の速度")]
     private float speed = 2f;
-    // Start is called before the first frame update
+
     void Start()
     {
         Direction();
-        player = GameObject.FindWithTag("Player");
     }
 
-    // Update is called once per frame
+    //キャラ移動
     void Update()
     {
-        //キャラ移動
         Vector2 pos = new Vector2(-speed * Time.deltaTime, 0);
         transform.Translate(pos);
-
     }
-
+    //キャラの向き
     void Direction()
     {
-        //キャラの向き
         Vector2 lscale = gameObject.transform.localScale;
         lscale.x *= 1;
         gameObject.transform.localScale = lscale;
     }
+    //カメラ外だったら
     void OnBecameInvisible()
     {
         Destroy(this.gameObject,2f);
