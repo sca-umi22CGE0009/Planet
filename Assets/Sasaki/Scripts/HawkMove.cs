@@ -25,7 +25,8 @@ public class HawkMove : MonoBehaviour
         time -= speed * Time.deltaTime;
 
         //8‚ÌšˆÚ“®
-        transform.position = new Vector2(hawkPos.x + Mathf.Sin(time) * width, hawkPos.y + Mathf.Sin(time * 2) * height);
+        transform.position = new Vector2(hawkPos.x + Mathf.Sin(time) * width, 
+                                                hawkPos.y + Mathf.Sin(time * 2) * height);
 
         //ƒLƒƒƒ‰‚ÌŒü‚«C³’l
         float s = 0.01f;

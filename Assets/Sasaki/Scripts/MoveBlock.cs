@@ -23,6 +23,7 @@ public class MoveBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.position = new Vector2(pos.x + Mathf.Sin((Time.time) / time) * range_x, pos.y + Mathf.Cos((Time.time) / time) * range_y);
+        transform.position = new Vector2(pos.x + Mathf.Sin((Time.time) / time) * range_x, 
+                                                    pos.y + Mathf.Cos((Time.time) / time) * range_y);
     }
 }
