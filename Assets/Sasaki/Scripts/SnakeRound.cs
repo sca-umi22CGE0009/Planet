@@ -28,7 +28,7 @@ public class SnakeRound : MonoBehaviour
         Vector2 pos = new Vector2(snakeX * Time.deltaTime, 0);
         transform.Translate(pos);
 
-        ////playerが蛇以上だったら
+        //playerが蛇以上だったら
         if (player.transform.position.x >= snake.x)
         {
             chack = false;
@@ -36,7 +36,6 @@ public class SnakeRound : MonoBehaviour
         //playerのx座標が蛇のx座標より大きくなったら追いかける
         if (!chack)
         {
-            //chack = false;
             rote = true;
             //player-snakeキャラの位置関係から方向を取得し、速度を一定化
             Vector2 targeting = (player.transform.position -
