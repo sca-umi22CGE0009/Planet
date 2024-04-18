@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class SnakeRound : MonoBehaviour
 {
-    [SerializeField, Header("xの幅")]
-    private float width = 2; //幅
-    private float x; 
-    [SerializeField, Header("蛇の速度")]
-    private float speed = 2f;
+    [SerializeField, Header("xの幅")] private float width = 2; //幅
+    private float snakeX; 
+    [SerializeField, Header("蛇の速度")] private float moveSpeed = 2f;
 
     private Vector2 snake; //蛇の座標取得
     private GameObject player;
@@ -18,16 +16,16 @@ public class SnakeRound : MonoBehaviour
 
     void Start()
     {
-        x = -speed;
+        snakeX = -moveSpeed;
         snake = transform.position;
         rote = false; 
         chack = true; 
-        player = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
     {
-        Vector2 pos = new Vector2(x * Time.deltaTime, 0);
+        Vector2 pos = new Vector2(snakeX * Time.deltaTime, 0);
         transform.Translate(pos);
 
         ////playerが蛇以上だったら
@@ -43,26 +41,26 @@ public class SnakeRound : MonoBehaviour
             //player-snakeキャラの位置関係から方向を取得し、速度を一定化
             Vector2 targeting = (player.transform.position -
                                     this.transform.position).normalized;
-            x = speed * targeting.x;
+            snakeX = moveSpeed * targeting.x;
 
             if (player.transform.position.x <= snake.x)
             {
                 rote = false;
-                x = speed * targeting.x;
+                snakeX = moveSpeed * targeting.x;
             }
         }
 
         //蛇がwidthより以下だったら
         if (this.transform.position.x <= snake.x - width && chack)
         {
-            x = speed;
+            snakeX = moveSpeed;
             chack = true;
             rote = true;
         }
         //蛇がwidth以上だったら
         else if (this.transform.position.x >= snake.x + width && chack)
         {
-            x = -speed;
+            snakeX = -moveSpeed;
             chack = true;
             rote = false;
         }

@@ -2,35 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// u.sasaki
+/// </summary>
 public class FlashScript : MonoBehaviour
 {
-    [SerializeField]
+    [SerializeField, Header("点滅周期全体の時間")] private float totalTime = 1.0f;
+    [SerializeField, Header("点滅周期")] private float flashTime = 0.5f; //点滅周期
+    float resetTime; //リセットするまでの秒数
+
     private Renderer flashBlock; //オブジェクト
-    [SerializeField]
-    private float flash = 1.0f; //点滅周期
-    private float time; //秒数
     private BoxCollider2D box;
-    // Start is called before the first frame update
+
     void Start()
     {
+        flashBlock = GetComponent<Renderer>();
         box = GetComponent<BoxCollider2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
+        resetTime += Time.deltaTime;
 
+        //Memo
         //flashの値までtimeが増えたら0に戻す
-        float repeatValue = Mathf.Repeat((float)time, flash);
+        float repeatValue = Mathf.Repeat(resetTime, totalTime);
 
+        //Memo
+        //enabled: コンポーネントをアクティブ、非アクティブにするために使用
         //repeatValueが0.5より大きくなったらtrue
-        flashBlock.enabled = repeatValue >= flash * 0.5;
+        flashBlock.enabled = repeatValue >= flashTime;
 
-        //box.isTrigger = repeatValue <= flash * 0.5;
-
-        //this.tag = (repeatValue <= flash * 0.5) ? "Untagged" : "Ground";
-
-        box.enabled = repeatValue >= flash * 0.5;
+        box.enabled = repeatValue >= flashTime;
     }
 }

@@ -2,39 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// u.sasaki
+/// </summary>
 public class BlockScript : MonoBehaviour
 {
-    [SerializeField]
-    private float time;
-    void Start()
-    {
-    }
-
-    void Update()
-    {
-        
-    }
+    [SerializeField, Header("プレイヤーが乗ってから消えるまでの時間")] private float moveTime;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject.tag == "Player")
         {
-            StartCoroutine("CoolTime");
+            StartCoroutine(CoolTime());
         }
     }
-
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.name == "Player")
-    //        {
-    //        StartCoroutine("CoolTime");
-    //    }
-    //}
+    //消えるまでの時間判定
     IEnumerator CoolTime()
     {
-        //2秒経ったら
-        yield return new WaitForSeconds(time);
-        //これを作動する
+        yield return new WaitForSeconds(moveTime);
         this.gameObject.SetActive(false);
     }
 }

@@ -7,18 +7,18 @@ using UnityEngine;
 /// </summary>
 public class SnakeStraight : MonoBehaviour
 {
-    [SerializeField, Header("蛇の速度")]
-    private float speed = 2f;
+    private GameObject player = null;
+    [SerializeField, Header("蛇の速度")] private float moveSpeed = 2f;
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         Direction();
     }
 
-    //キャラ移動
     void Update()
     {
-        Vector2 pos = new Vector2(-speed * Time.deltaTime, 0);
+        Vector2 pos = new Vector2(-moveSpeed * Time.deltaTime, 0);
         transform.Translate(pos);
     }
     //キャラの向き
@@ -31,6 +31,9 @@ public class SnakeStraight : MonoBehaviour
     //カメラ外だったら
     void OnBecameInvisible()
     {
-        Destroy(this.gameObject,2f);
+        if (player.transform.position.x > this.transform.position.x)
+        {
+            Destroy(gameObject, 2f);
+        }
     }
 }

@@ -8,22 +8,15 @@ using UnityEngine;
 public class HawkMove : MonoBehaviour
 {
     private float time;
-    [SerializeField,Header("鷹の速度")]
-    private float speed = 2; //スピード
-
-    [SerializeField, Header("xの幅")]
-    private float width= 4; //幅
-
-    [SerializeField, Header("yの幅")]
-    private float height= 1; //高さ
-
-    Vector2 pos;
-
+    [SerializeField, Header("鷹の速度")] private float speed = 2; //スピード
+    [SerializeField, Header("xの幅")] private float width= 4; //幅
+    [SerializeField, Header("yの幅")] private float height= 1; //高さ
+    Vector2 hawkPos;
     bool rote;
 
     void Start()
     {
-        pos = transform.position;
+        hawkPos = transform.position;
         rote = true;
     }
 
@@ -32,17 +25,17 @@ public class HawkMove : MonoBehaviour
         time -= speed * Time.deltaTime;
 
         //8の字移動
-        transform.position = new Vector2(pos.x + Mathf.Sin(time) * width, pos.y + Mathf.Sin(time * 2) * height);
+        transform.position = new Vector2(hawkPos.x + Mathf.Sin(time) * width, hawkPos.y + Mathf.Sin(time * 2) * height);
 
-        //修正の値
+        //キャラの向き修正値
         float s = 0.01f;
 
         //キャラの向き判定
-        if (this.transform.position.x >= pos.x + width - s)
+        if (this.transform.position.x >= hawkPos.x + width - s)
         {
             rote = true;
         }
-        else if (this.transform.position.x <= s - width + pos.x)
+        else if (this.transform.position.x <= s - width + hawkPos.x)
         {
             rote = false;
         }
