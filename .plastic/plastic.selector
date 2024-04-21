@@ -1,0 +1,4 @@
+repository "Planet@umi2009@cloud"
+  path "/"
+    br "/main"
+    co "/main"

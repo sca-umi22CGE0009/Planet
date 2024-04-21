@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class SnakeStraight : MonoBehaviour
 {
-    private GameObject player = null;
+    private GameObject player;
     [SerializeField, Header("ŽÖ‚Ì‘¬“x")] private float moveSpeed = 2f;
 
     void Start()
@@ -31,7 +31,7 @@ public class SnakeStraight : MonoBehaviour
     //ƒJƒƒ‰ŠO‚¾‚Á‚½‚ç
     void OnBecameInvisible()
     {
-        if (player.transform.position.x > this.transform.position.x)
+        if (player != null && player.transform.position.x > this.transform.position.x)
         {
             Destroy(gameObject, 2f);
         }
