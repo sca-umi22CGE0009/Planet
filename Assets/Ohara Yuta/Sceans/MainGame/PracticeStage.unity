@@ -341,7 +341,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3197562711627386608, guid: f29e42f8e5f8bbf4fa00738eb49d9ace, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3197562711627386608, guid: f29e42f8e5f8bbf4fa00738eb49d9ace, type: 3}
       propertyPath: m_LocalScale.x
@@ -391,9 +391,25 @@ PrefabInstance:
       propertyPath: time
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3197562711627386609, guid: f29e42f8e5f8bbf4fa00738eb49d9ace, type: 3}
+      propertyPath: moveTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197562711627386609, guid: f29e42f8e5f8bbf4fa00738eb49d9ace, type: 3}
+      propertyPath: playerJadgmentTime
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3197562711627386621, guid: f29e42f8e5f8bbf4fa00738eb49d9ace, type: 3}
       propertyPath: m_Name
       value: EraseBlock (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197562711627386622, guid: f29e42f8e5f8bbf4fa00738eb49d9ace, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197562711627386622, guid: f29e42f8e5f8bbf4fa00738eb49d9ace, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f29e42f8e5f8bbf4fa00738eb49d9ace, type: 3}
@@ -3457,9 +3473,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 274767932}
   - {fileID: 236360137}
   - {fileID: 34529449}
+  - {fileID: 274767932}
   m_Father: {fileID: 132195120}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4268,7 +4284,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3197562711627386608, guid: f29e42f8e5f8bbf4fa00738eb49d9ace, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3197562711627386608, guid: f29e42f8e5f8bbf4fa00738eb49d9ace, type: 3}
       propertyPath: m_LocalScale.x
@@ -4318,9 +4334,25 @@ PrefabInstance:
       propertyPath: time
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3197562711627386609, guid: f29e42f8e5f8bbf4fa00738eb49d9ace, type: 3}
+      propertyPath: moveTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197562711627386609, guid: f29e42f8e5f8bbf4fa00738eb49d9ace, type: 3}
+      propertyPath: playerJadgmentTime
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3197562711627386621, guid: f29e42f8e5f8bbf4fa00738eb49d9ace, type: 3}
       propertyPath: m_Name
       value: EraseBlock (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197562711627386622, guid: f29e42f8e5f8bbf4fa00738eb49d9ace, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197562711627386622, guid: f29e42f8e5f8bbf4fa00738eb49d9ace, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f29e42f8e5f8bbf4fa00738eb49d9ace, type: 3}
@@ -4642,7 +4674,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3197562711627386608, guid: f29e42f8e5f8bbf4fa00738eb49d9ace, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3197562711627386608, guid: f29e42f8e5f8bbf4fa00738eb49d9ace, type: 3}
       propertyPath: m_LocalScale.x
@@ -4692,9 +4724,25 @@ PrefabInstance:
       propertyPath: time
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3197562711627386609, guid: f29e42f8e5f8bbf4fa00738eb49d9ace, type: 3}
+      propertyPath: moveTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197562711627386609, guid: f29e42f8e5f8bbf4fa00738eb49d9ace, type: 3}
+      propertyPath: playerJadgmentTime
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3197562711627386621, guid: f29e42f8e5f8bbf4fa00738eb49d9ace, type: 3}
       propertyPath: m_Name
       value: EraseBlock
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197562711627386622, guid: f29e42f8e5f8bbf4fa00738eb49d9ace, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197562711627386622, guid: f29e42f8e5f8bbf4fa00738eb49d9ace, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f29e42f8e5f8bbf4fa00738eb49d9ace, type: 3}
